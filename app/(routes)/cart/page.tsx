@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator"
 import { useCart } from "@/hooks/use-cart"
 import { useAuth } from "@/hooks/use-auth"
 import { formatPrice } from "@/lib/formatPrice"
+import { toast } from "sonner"
 import CartItem from "./components/cart-item"
 
 import { makePaymentRequest } from "@/api/payment"
@@ -15,18 +16,35 @@ export default function CartPage() {
 
 
     const buyStripe = async () => {
+        if (!token) {
+            toast.error("Debes iniciar sesión para realizar una compra")
+            return
+        }
+
         try {
-            const res = await makePaymentRequest.post("/api/orders", {
+            const promise = makePaymentRequest.post("/api/orders", {
                 products: items,
             }, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             })
-            window.location.href = res.data.stripeSession.url
-            removeAll()
+
+            toast.promise(promise, {
+                loading: "Procesando compra...",
+                success: (data) => {
+                    window.location.href = data.data.stripeSession.url
+                    removeAll()
+                    return "Redirigiendo a la pasarela de pago..."
+                },
+                error: (error) => {
+                    console.error(error)
+                    return "Ocurrió un error al procesar la compra"
+                }
+            })
         } catch (error) {
-            console.log(error)
+            console.error(error)
+            toast.error("Ocurrió un error inesperado")
         }
     }
 
