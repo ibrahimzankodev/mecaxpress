@@ -30,6 +30,11 @@ const FeaturedProducts = () => {
                             const { attributes, id } = product
                             const { slug, images, productName, taste, origin } = attributes
 
+                            // Skip products without images
+                            if (!images?.data || images.data.length === 0 || !images.data[0]?.attributes?.url) {
+                                return null;
+                            }
+
                             return (
                                 <CarouselItem key={id} className="md:basis-1/2 lg:basis-1/3 group ">
                                     <div className="p-1">

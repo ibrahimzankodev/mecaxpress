@@ -21,7 +21,13 @@ const CartItem = (props: CartItemProps) => {
     return (
         <div>
             <li className="flex py-6 border-b">
-                <ProductImageMiniature slug={product.attributes.slug} url={product.attributes.images.data[0].attributes.url} alt={product.attributes.productName} />
+                {product.attributes.images?.data && product.attributes.images.data.length > 0 && product.attributes.images.data[0]?.attributes?.url ? (
+                    <ProductImageMiniature slug={product.attributes.slug} url={product.attributes.images.data[0].attributes.url} alt={product.attributes.productName} />
+                ) : (
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-200 rounded-md flex items-center justify-center shrink-0">
+                        <p className="text-xs text-gray-500">Sin imagen</p>
+                    </div>
+                )}
                 <div className="flex flex-col justify-between flex-1 px-6">
                     <div className="flex justify-between gap-4">
                         <h2 className="text-lg font-bold">{product.attributes.productName}</h2>
