@@ -72,7 +72,7 @@ export default function CartPage() {
                             <p>{formatPrice(totalPrice)}</p>
                         </div>
                         <div className="flex items-center justify-center w-full mt-3">
-                            <Button className="w-full" onClick={buyStripe}>Comprar</Button>
+                            <Button className="w-full cursor-pointer" onClick={buyStripe}>Comprar</Button>
                         </div>
                     </div>
                 </div>
