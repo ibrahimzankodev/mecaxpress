@@ -31,9 +31,10 @@ const Navbar = () => {
                     <ShoppingCart
                         strokeWidth="1"
                         className="cursor-pointer"
-                        onClick={() => router.push("/cart")} />
+                        onClick={() => router.push("/cart")}
+                        aria-label="Ver carrito de compras" />
                     : (
-                        <div className="flex gap-1" onClick={() => router.push("/cart")}>
+                        <div className="flex gap-1" onClick={() => router.push("/cart")} aria-label={`Ver carrito con ${cart.items.length} productos`}>
                             <BaggageClaim strokeWidth={1} className="cursor-pointer" />
                             <span>{cart.items.length}</span>
                         </div>
@@ -42,8 +43,8 @@ const Navbar = () => {
                 <Heart
                     strokeWidth="1"
                     className={`cursor-pointer ${lovedItems.length > 0 && 'fill-black dark:fill-white'}`}
-
-                    onClick={() => router.push("/loved-products")} />
+                    onClick={() => router.push("/loved-products")}
+                    aria-label={`Ver productos favoritos${lovedItems.length > 0 ? ` (${lovedItems.length})` : ''}`} />
 
                 {/* <User
                     strokeWidth="1"

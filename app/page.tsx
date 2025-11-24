@@ -10,13 +10,26 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
-      <CarouselTextBanner />
-      <FeaturedProducts />
-      <ChooseCategory />
-      <BannerDiscount />
-      <BrandsSection />
-      {/* <BannerProduct /> */}
+    <main className="min-h-screen">
+      <section aria-label="Promociones y ofertas">
+        <CarouselTextBanner />
+      </section>
+
+      <section aria-label="Productos destacados">
+        <FeaturedProducts />
+      </section>
+
+      <section aria-label="Categorías de productos">
+        <ChooseCategory />
+      </section>
+
+      <section aria-label="Descuentos especiales">
+        <BannerDiscount />
+      </section>
+
+      <section aria-label="Marcas disponibles">
+        <BrandsSection />
+      </section>
     </main>
   )
 }

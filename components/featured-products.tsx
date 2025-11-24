@@ -18,8 +18,8 @@ const FeaturedProducts = () => {
     const { addItem } = useCart()
 
     return (
-        <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
-            <h3 className="px-6 text-3xl sm:pb-8">Productos Destacados</h3>
+        <div className="max-w-6xl py-8 px-4 mx-auto sm:py-16 sm:px-24">
+            <h2 className="px-2 sm:px-6 pb-6 sm:pb-8 text-2xl sm:text-3xl font-bold text-center sm:text-left">Productos Destacados</h2>
             <Carousel>
                 <CarouselContent className="-ml-2 md:-ml-4">
                     {loading && (
@@ -41,15 +41,22 @@ const FeaturedProducts = () => {
                                         <Card className="py-4 border border-gray-200 shadow-none h-full flex flex-col">
                                             <CardContent className="relative flex items-center justify-center px-6 py-2">
                                                 <img src={images.data[0].attributes.url.startsWith('http') ? images.data[0].attributes.url : `${process.env.NEXT_PUBLIC_BACKEND_URL}${images.data[0].attributes.url}`}
-                                                    alt="Image Featured" />
+                                                    alt={`${productName} - ${taste} ${origin}`}
+                                                    loading="lazy"
+                                                />
                                                 <div className="absolute w-full px-6 transition duration-200 opacity-0 group-hover:opacity-100 bottom-5">
                                                     <div className="flex justify-center gap-x-6">
-                                                        <IconButton onClick={() => router.push(`product/${slug}`)} icon={<Expand size={20} />}
+                                                        <IconButton
+                                                            onClick={() => router.push(`product/${slug}`)}
+                                                            icon={<Expand size={20} />}
                                                             className="text-gray-600"
+                                                            aria-label={`Ver detalles de ${productName}`}
                                                         />
                                                         <IconButton
-                                                            onClick={() => addItem(product)} icon={<ShoppingCart size={20} />}
+                                                            onClick={() => addItem(product)}
+                                                            icon={<ShoppingCart size={20} />}
                                                             className="text-gray-600"
+                                                            aria-label={`Añadir ${productName} al carrito`}
                                                         />
                                                     </div>
                                                 </div>

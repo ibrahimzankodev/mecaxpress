@@ -14,8 +14,46 @@ const urbanist = Urbanist({
 });
 
 export const metadata: Metadata = {
-  title: "La Ferreteria",
-  description: "bienvenido/a a la ferreteria online",
+  title: "MecaXpress - Ferretería Online de Herramientas Industriales",
+  description: "Compra herramientas industriales de calidad en MecaXpress. Fresadoras, tornos, productos varios y más. Envío en 24/48h. Descuentos hasta -15% en tu primera compra.",
+  keywords: ["ferretería online", "herramientas industriales", "fresadoras", "tornos", "maquinaria industrial", "MecaXpress", "herramientas profesionales"],
+  authors: [{ name: "MecaXpress" }],
+  creator: "MecaXpress",
+  publisher: "MecaXpress",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL(process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://mecaxpress.com'),
+  openGraph: {
+    title: "MecaXpress - Ferretería Online de Herramientas Industriales",
+    description: "Compra herramientas industriales de calidad. Envío en 24/48h. Descuentos hasta -15%.",
+    url: process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://mecaxpress.com',
+    siteName: "MecaXpress",
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MecaXpress - Ferretería Online",
+    description: "Herramientas industriales de calidad. Envío en 24/48h.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add your verification codes here when available
+    // google: 'your-google-verification-code',
+  },
 };
 
 export default function RootLayout({
@@ -26,6 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${urbanist.variable} antialiased`}>
         <ThemeProvider
           attribute="class"

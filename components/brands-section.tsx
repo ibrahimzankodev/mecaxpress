@@ -51,22 +51,22 @@ const brands = [
 
 const BrandsSection = () => {
     return (
-        <section className="py-24 bg-black text-white">
+        <section className="py-12 sm:py-24 bg-black text-white">
             <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-bold text-center mb-16 tracking-tight">
+                <h2 className="text-2xl sm:text-4xl font-bold text-center mb-8 sm:mb-16 tracking-tight">
                     Algunas de las Marcas que ofrecemos
                 </h2>
 
-                <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto">
+                <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-xl mx-auto">
                     {brands.map((brand) => (
                         <div
                             key={brand.name}
-                            className="group relative flex items-center justify-center p-3 rounded-xl bg-neutral-900/50 hover:bg-neutral-800/50 transition-all duration-300 border border-neutral-800 hover:border-neutral-700 aspect-square shadow-md hover:shadow-lg hover:-translate-y-1"
+                            className="group relative flex items-center justify-center p-2 sm:p-3 rounded-xl bg-neutral-900/50 hover:bg-neutral-800/50 transition-all duration-300 border border-neutral-800 hover:border-neutral-700 aspect-square shadow-md hover:shadow-lg hover:-translate-y-1"
                         >
                             <div className="relative w-full h-full flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100">
                                 <Image
                                     src={brand.image}
-                                    alt={brand.name}
+                                    alt={`Logo de ${brand.name} - Marca de herramientas industriales`}
                                     width={100}
                                     height={100}
                                     className="object-contain max-w-full max-h-full p-1"
