@@ -36,9 +36,9 @@ const FeaturedProducts = () => {
                             }
 
                             return (
-                                <CarouselItem key={id} className="md:basis-1/2 lg:basis-1/3 group ">
-                                    <div className="p-1">
-                                        <Card className="py-4 border border-gray-200 shadow-none">
+                                <CarouselItem key={id} className="md:basis-1/2 lg:basis-1/3 group h-full">
+                                    <div className="p-1 h-full">
+                                        <Card className="py-4 border border-gray-200 shadow-none h-full flex flex-col">
                                             <CardContent className="relative flex items-center justify-center px-6 py-2">
                                                 <img src={images.data[0].attributes.url.startsWith('http') ? images.data[0].attributes.url : `${process.env.NEXT_PUBLIC_BACKEND_URL}${images.data[0].attributes.url}`}
                                                     alt="Image Featured" />
@@ -54,9 +54,9 @@ const FeaturedProducts = () => {
                                                     </div>
                                                 </div>
                                             </CardContent>
-                                            <div className="flex justify-between gap-4 px-8">
-                                                <h3 className="text-lg font-bold">{productName}</h3>
-                                                <div className="flex items-center justify-between gap-3">
+                                            <div className="flex justify-between gap-4 px-8 mt-auto">
+                                                <h3 className="text-lg font-bold min-h-14 flex items-center">{productName}</h3>
+                                                <div className="flex items-center justify-between gap-3 shrink-0">
                                                     <p className="px-2 py-1 text-white bg-black rounded-full dark:bg-white dark:text-black w-fit">{taste}</p>
                                                     <p className="px-2 py-1 text-white bg-yellow-900 rounded-full w-fit">{origin}</p>
                                                 </div>
