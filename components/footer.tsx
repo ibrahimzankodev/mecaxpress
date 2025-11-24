@@ -21,7 +21,7 @@ const Footer = () => {
         {
             id: 3,
             name: "Mi cuenta",
-            link: user ? "/account" : "/login-register"
+            link: user ? "/dashboard" : "/login"
         },
         {
             id: 4,
