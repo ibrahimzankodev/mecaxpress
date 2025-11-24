@@ -1,30 +1,35 @@
+"use client";
+
 import Link from "next/link";
 import { Separator } from "./ui/separator";
-
-const dataFooter = [
-    {
-        id: 1,
-        name: "sobre nosotros",
-        link: "#"
-    },
-    {
-        id: 2,
-        name: "Productos",
-        link: "#"
-    },
-    {
-        id: 3,
-        name: "Mi cuentas",
-        link: "#"
-    },
-    {
-        id: 4,
-        name: "Politica de privacidad",
-        link: "#"
-    },
-]
+import { useAuth } from "@/hooks/use-auth";
 
 const Footer = () => {
+    const { user } = useAuth();
+
+    const dataFooter = [
+        {
+            id: 1,
+            name: "sobre nosotros",
+            link: "#"
+        },
+        {
+            id: 2,
+            name: "Productos",
+            link: "#"
+        },
+        {
+            id: 3,
+            name: "Mi cuenta",
+            link: user ? "/account" : "/login-register"
+        },
+        {
+            id: 4,
+            name: "Politica de privacidad",
+            link: "#"
+        },
+    ];
+
     return (
         <footer className="mt-8 border-t">
             <div className="w-full max-w-7xl mx-auto p-4 py-6 lg:py-8">

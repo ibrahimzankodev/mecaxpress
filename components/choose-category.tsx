@@ -15,6 +15,22 @@ const ChooseCategory = () => {
             </h3>
 
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {/* Categoría "Todos los productos" */}
+                <Link
+                    href="/products"
+                    className="relative max-w-xs mx-auto overflow-hidden bg-no-repeat bg-cover rounded-lg"
+                >
+                    <img
+                        src="/imagenes-categorias/ChatGPT Image todos los productos.png"
+                        alt="Todos los productos"
+                        className="max-w-[270px] transition duration-300 ease-in-out rounded-lg hover:scale-110"
+                    />
+                    <p className="absolute w-full py-2 text-lg font-bold text-center text-white bottom-5 backdrop-blur-lg">
+                        Todos los productos
+                    </p>
+                </Link>
+
+                {/* Categorías de Strapi */}
                 {!loading &&
                     result !== undefined && (
                         result.map((category: CategoryType) => (
