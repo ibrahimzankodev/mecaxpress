@@ -24,7 +24,7 @@ const CaruselProduct = (props: CarouselProductProps) => {
                     {images.data.map((image) => (
                         <CarouselItem key={image.id}>
                             <img
-                                src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${image.attributes.url}`}
+                                src={image.attributes.url.startsWith('http') ? image.attributes.url : `${process.env.NEXT_PUBLIC_BACKEND_URL}${image.attributes.url}`}
                                 alt="image product"
                                 className="rounded-lg" />
                         </CarouselItem>

@@ -35,7 +35,7 @@ const ProductCard = (props: ProductCardProps) => {
                     {product.attributes.images?.data && product.attributes.images.data.length > 0 ? (
                         product.attributes.images.data.map((image) => (
                             <CarouselItem key={image.id} className="group">
-                                <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${image.attributes.url}`} alt="image"
+                                <img src={image.attributes.url.startsWith('http') ? image.attributes.url : `${process.env.NEXT_PUBLIC_BACKEND_URL}${image.attributes.url}`} alt="image"
                                     className="rounded-xl"
                                 />
                                 <div className="absolute w-full px-6 transition duration-200 opacity-0 group-hover:opacity-100 bottom-5">
