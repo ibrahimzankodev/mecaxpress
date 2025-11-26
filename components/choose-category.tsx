@@ -46,7 +46,7 @@ const ChooseCategory = () => {
                 >
                     <Image
                         src="/imagenes-categorias/ChatGPT Image todos los productos.png"
-                        alt="Todos los productos - Catálogo completo de herramientas industriales MecaXpress"
+                        alt="Todos los productos - Catálogo completo de herramientas industriales MecaToolsXpress"
                         width={270}
                         height={270}
                         className="w-full max-w-[270px] mx-auto h-auto transition duration-300 ease-in-out rounded-lg hover:scale-110"

@@ -26,7 +26,7 @@ export const dataCarouselTop = [
     {
         id: 4,
         title: "Comprar Novedades",
-        description: "Accede a la ultimas novedades de MecaXpress!.",
+        description: "Accede a la ultimas novedades de MecaToolsXpress!.",
         link: "#",
     },
 ]

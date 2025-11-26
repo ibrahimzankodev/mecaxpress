@@ -36,7 +36,7 @@ const Footer = () => {
                 <div className="md:flex md:items-center md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <span className="text-2xl font-bold">
-                            MecaXpress
+                            MecaToolsXpress
                         </span>
                     </div>
 
@@ -56,7 +56,7 @@ const Footer = () => {
                 <div className="text-sm text-gray-500 text-center dark:text-gray-400">
                     &copy; 2025{' '}
                     <Link href={"#"} className="hover:underline font-semibold">
-                        MecaXpress
+                        MecaToolsXpress
                     </Link>
                     . Todos los derechos reservados
                 </div>

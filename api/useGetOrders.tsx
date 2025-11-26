@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Order } from "@/types/order";
 
 export function useGetOrders(userId: number | undefined, token: string | null) {
-    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/orders?filters[userId][$eq]=${userId}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/orders?filters[user][id][$eq]=${userId}`;
     const [result, setResult] = useState<Order[] | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");

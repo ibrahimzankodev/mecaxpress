@@ -31,10 +31,10 @@ const MenuList = () => {
                     href="/"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      MecaXpress
+                      MecaToolsXpress
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Sumergete en la Pagina Web de MecaXpress y encuentra lo que necesitas.
+                      Sumergete en la Pagina Web de MecaToolsXpress y encuentra lo que necesitas.
                     </p>
                   </a>
                 </NavigationMenuLink>
