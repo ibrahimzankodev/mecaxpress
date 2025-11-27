@@ -5,6 +5,7 @@ import { ResponseType } from "@/types/response"
 import SkeletonProduct from "./components/skeleton-product"
 import CaruselProduct from "./components/carusel-product"
 import InfoProduct from "./components/info-product"
+import NotFoundProduct from "./components/not-found-product"
 
 export default function Page() {
     const params = useParams()
@@ -14,6 +15,11 @@ export default function Page() {
 
     if (result === null) {
         return <SkeletonProduct />
+    }
+
+    // Handle product not found
+    if (result.length === 0) {
+        return <NotFoundProduct />
     }
 
     return (

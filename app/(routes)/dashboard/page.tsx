@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useGetOrders } from "@/api/useGetOrders";
 import { formatPrice } from "@/lib/utils";
+import OrderSkeleton from "./components/order-skeleton";
+import { Package } from "lucide-react";
 
 export default function DashboardPage() {
     const { user, token, logout } = useAuth();
@@ -39,11 +41,32 @@ export default function DashboardPage() {
             </div>
 
             <h2 className="text-2xl font-bold mb-4">Mis Pedidos</h2>
-            {loading && <p>Cargando pedidos...</p>}
-            {error && <p className="text-red-500">Error al cargar pedidos</p>}
+
+            {loading && (
+                <div className="space-y-4">
+                    <OrderSkeleton />
+                    <OrderSkeleton />
+                    <OrderSkeleton />
+                </div>
+            )}
+
+            {error && (
+                <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6 text-center">
+                    <p className="text-red-600 dark:text-red-400">Error al cargar pedidos. Por favor, intenta de nuevo.</p>
+                </div>
+            )}
 
             {!loading && !error && orders && orders.length === 0 && (
-                <p>No has realizado ningún pedido aún.</p>
+                <div className="bg-secondary/50 rounded-lg p-12 text-center">
+                    <Package className="w-16 h-16 mx-auto text-muted-foreground mb-4" strokeWidth={1} />
+                    <p className="text-lg text-muted-foreground">No has realizado ningún pedido aún.</p>
+                    <button
+                        onClick={() => router.push("/products")}
+                        className="mt-4 text-blue-600 hover:underline dark:text-blue-400"
+                    >
+                        Explorar productos
+                    </button>
+                </div>
             )}
 
             <div className="space-y-4">
