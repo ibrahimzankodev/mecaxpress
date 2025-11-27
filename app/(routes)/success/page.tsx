@@ -16,12 +16,15 @@ const PageSuccess = () => {
                 <div>
                     <h1 className="text-3xl">¡Gracias por tu compra!</h1>
                     <p className="my-3">
-                        Gracias por tu compra. Te contactaremos pronto.
+                        Tu pedido ha sido procesado correctamente y ya estamos preparando todo para enviártelo lo antes posible. En breve recibirás un correo con los detalles de tu pedido y la información de seguimiento. Si tienes cualquier duda, nuestro equipo de atención al cliente está disponible para ayudarte.
                     </p>
                     <p className="my-3">
-                        Gracias por tu compra. Te contactaremos pronto.
+                        Para cualquier Consulta o Duda escribenos a: mecaxpressonline@gmail.com.
                     </p>
-                    <p className="my-3"> Gracias por tu compra. Te contactaremos pronto.</p>
+
+                    <p>
+                        o llamanos al numero: +34612295476
+                    </p>
 
                     <Button onClick={() => router.push('/')}>Volver a la tienda</Button>
                 </div>
