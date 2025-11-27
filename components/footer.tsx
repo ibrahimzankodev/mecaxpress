@@ -10,8 +10,8 @@ const Footer = () => {
     const dataFooter = [
         {
             id: 1,
-            name: "sobre nosotros",
-            link: "#"
+            name: "Sobre nosotros",
+            link: "/sobre-nosotros"
         },
         {
             id: 2,
@@ -26,7 +26,7 @@ const Footer = () => {
         {
             id: 4,
             name: "Politica de privacidad",
-            link: "#"
+            link: "/politicas"
         },
     ];
 
