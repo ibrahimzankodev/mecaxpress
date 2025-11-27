@@ -62,10 +62,10 @@ const AboutPage = () => {
                     Explora nuestro catálogo completo y encuentra las herramientas que necesitas para llevar tu trabajo al siguiente nivel.
                 </p>
                 <div className="flex justify-center gap-4">
-                    <Button onClick={() => router.push('/products')} size="lg">
+                    <Button className="cursor-pointer" onClick={() => router.push('/products')} size="lg">
                         Ver Catálogo
                     </Button>
-                    <Button onClick={() => router.push('/')} variant="outline" size="lg">
+                    <Button className="cursor-pointer" onClick={() => router.push('/')} variant="outline" size="lg">
                         Volver al Inicio
                     </Button>
                 </div>

@@ -140,7 +140,7 @@ const Politicas = () => {
                 <p className="mb-6">
                     Teléfono: <strong>+34 612 295 476</strong>
                 </p>
-                <Button onClick={() => router.push('/')}>Volver a la tienda</Button>
+                <Button className="cursor-pointer" onClick={() => router.push('/')}>Volver a la tienda</Button>
             </div>
         </div>
     );
