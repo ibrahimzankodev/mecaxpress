@@ -35,7 +35,7 @@ const PageSuccessError = () => {
                     </p>
 
                     <div className="flex gap-3">
-                        <Button onClick={() => router.push('/')}>Volver a la tienda</Button>
+                        <Button className="cursor-pointer" onClick={() => router.push('/')}>Volver a la tienda</Button>
                     </div>
                 </div>
             </div>

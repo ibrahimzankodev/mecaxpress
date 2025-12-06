@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'mecaxpress-be-1.onrender.com',
       },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '1337',
+      },
     ],
   },
 };

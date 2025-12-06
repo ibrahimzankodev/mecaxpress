@@ -26,7 +26,7 @@ const PageSuccess = () => {
                         o llamanos al numero: +34612295476
                     </p>
 
-                    <Button onClick={() => router.push('/')}>Volver a la tienda</Button>
+                    <Button className="cursor-pointer" onClick={() => router.push('/')}>Volver a la tienda</Button>
                 </div>
             </div>
         </div>

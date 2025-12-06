@@ -13,15 +13,18 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { useAuth } from "@/hooks/use-auth"
 
 
 
 const MenuList = () => {
+  const { user } = useAuth()
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Sobre Nosotros</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Accede</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -39,20 +42,22 @@ const MenuList = () => {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/shop" title="Tienda">
+              <ListItem href={user ? "/dashboard" : "/login"} title="Cuenta">
                 Accede a tu informacion, pedidos y mucho más.
               </ListItem>
-              <ListItem href="/offers" title="Ofertas">
-                Sección dedicada a promociones y descuentos especiales.
+              <ListItem href="/products" title="Productos">
+                Todos nuestros Productos.
               </ListItem>
-              <ListItem href="/" title="Accesorios">
-                Productos complementarios como Portaherramientas, Conos, Platos, Recambios etc...
+              <ListItem href="/category/productos-varios" title="Accesorios">
+                Productos Varios...
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Productos</NavigationMenuTrigger>
+
+          {/* <NavigationMenuTrigger>Productos</NavigationMenuTrigger> */}
+
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
@@ -82,36 +87,36 @@ const MenuList = () => {
 export default MenuList
 
 const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Placas",
-    href: "/plaquitas/torno",
-    description:
-      "Todos los modelos de placas para torno.",
-  },
-  {
-    title: "Fresas de Metal Duro",
-    href: "/fresas/MetalDuro",
-    description:
-      "Todos los modelos de Fresas de Metal Duro.",
-  },
-  {
-    title: "Brocas de Metal Duro",
-    href: "/Brocas/MetalDuro",
-    description:
-      "Todos los modelos de brocas de Metal Duro.",
-  },
-  {
-    title: "Fresas de Cobalto",
-    href: "/fresas/Cobalto",
-    description:
-      "Todos los modelos de fresas de Cobalto.",
-  },
-  {
-    title: "Brocas de Cobalto",
-    href: "/Brocas/Cobalto",
-    description:
-      "Todos los modelos de brocas de Cobalto",
-  },
+  // {
+  //   title: "Placas",
+  //   href: "/plaquitas/torno",
+  //   description:
+  //     "Todos los modelos de placas para torno.",
+  // },
+  // {
+  //   title: "Fresas de Metal Duro",
+  //   href: "/fresas/MetalDuro",
+  //   description:
+  //     "Todos los modelos de Fresas de Metal Duro.",
+  // },
+  // {
+  //   title: "Brocas de Metal Duro",
+  //   href: "/Brocas/MetalDuro",
+  //   description:
+  //     "Todos los modelos de brocas de Metal Duro.",
+  // },
+  // {
+  //   title: "Fresas de Cobalto",
+  //   href: "/fresas/Cobalto",
+  //   description:
+  //     "Todos los modelos de fresas de Cobalto.",
+  // },
+  // {
+  //   title: "Brocas de Cobalto",
+  //   href: "/Brocas/Cobalto",
+  //   description:
+  //     "Todos los modelos de brocas de Cobalto",
+  // },
 ]
 
 const ListItem = React.forwardRef<
